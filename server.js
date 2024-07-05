@@ -1,11 +1,16 @@
-// server.js
+, r// server.js
 
 const http = require('http');
 const { emit } = require('process');
 const { Server } = require('socket.io');
 
 // Create an HTTP server
-const server = http.createServer();
+const server = http.createServer((req, res) => {
+   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000'); // Replace with your frontend URL
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST'); // Specify allowed HTTP methods
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Specify allowed headers
+  res.setHeader('Access-Control-Allow-Credentials', 'true'); // Allow credentials (cookies, authorization headers, etc.)
+});
 
 // Initialize Socket.IO and attach it to the HTTP server
 const io = new Server(server, {
