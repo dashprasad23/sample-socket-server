@@ -10,7 +10,7 @@ const server = http.createServer();
 // Initialize Socket.IO and attach it to the HTTP server
 const io = new Server(server, {
     cors: {
-      origin: '*', // Change this to your client's URL for production
+      origin: 'http://localhost:3000', // Change this to your client's URL for production
       methods: ['GET', 'POST'], // Allowed HTTP methods
       allowedHeaders: ['my-custom-header'], // Allowed headers
       credentials: true // Allow credentials (cookies, Authorization headers, etc.)
