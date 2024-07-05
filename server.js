@@ -10,6 +10,7 @@ const server = http.createServer((req, res) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST'); // Specify allowed HTTP methods
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Specify allowed headers
   res.setHeader('Access-Control-Allow-Credentials', 'true'); // Allow credentials (cookies, authorization headers, etc.)
+   res.status(200).send("Hellow")
 });
 
 // Initialize Socket.IO and attach it to the HTTP server
